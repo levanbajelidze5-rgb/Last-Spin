@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last-Spin | CS Case Opening</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 50px;
+        }
+        h1 {
+            color: #ffaa00;
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #888;
+            font-size: 1.2rem;
+        }
+        .case-container {
+            margin: 50px auto;
+            width: 300px;
+            height: 150px;
+            background: #1e1e1e;
+            border: 2px solid #333;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        button {
+            background-color: #ffaa00;
+            color: #121212;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        button:hover {
+            background-color: #ff8800;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.4rem;
+            color: #00ff88;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>LAST-SPIN</h1>
+    <p>CS Case Opening Simulator</p>
+
+    <div class="case-container" id="caseBox">
+        Weapon Case
+    </div>
+
+    <button onclick="openCase()">OPEN CASE</button>
+    <div id="result"></div>
+
+    <script>
+        const drops = [
+            "AK-47 | Redline (Field-Tested)",
+            "AWP | Asiimov (Field-Tested)",
+            "M4A4 | Howl (Factory New)",
+            "USP-S | Kill Confirmed",
+            "Butterfly Knife | Doppler",
+            "P250 | Sand Dune (Battle-Scarred)"
+        ];
+
+        function openCase() {
+            const resultDiv = document.getElementById("result");
+            const randomDrop = drops[Math.floor(Math.random() * drops.length)];
+            resultDiv.innerHTML = `🎉 Drop: ${randomDrop}`;
+        }
+    </script>
+
+</body>
+</html>
